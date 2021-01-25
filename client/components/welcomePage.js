@@ -42,29 +42,32 @@ class welcomePageDC extends React.Component {
     let newOldDay = day + '-' + month + '-' + year
     return newOldDay
   }
-  async getStockPrices(date1, date2) {
+  getStockPrices(date1, date2) {
     let dashedDate1 = this.getDateInDash(date1)
     let stockpriceb = this.props.getStockPricesB(dashedDate1)
     let stockpricea = this.props.getStockPricesA()
-    console.log('after', stockpricea, 'before', stockpriceb)
   }
   async getBitCoinDifference(defaultDate, date2) {
-    let dateOne = this.getDateInDash(defaultDate)
-    let dateTwo = this.getDateInDash(date2)
+    try {
+      let dateOne = this.getDateInDash(defaultDate)
+      let dateTwo = this.getDateInDash(date2)
 
-    const CoinGeckoClient = new CoinGecko()
-    let data1 = await CoinGeckoClient.coins.fetchHistory('bitcoin', {
-      date: dateOne
-    })
-    let data2 = await CoinGeckoClient.coins.fetchHistory('bitcoin', {
-      date: dateTwo
-    })
-    let bitCoinB = data1.data.market_data.current_price.usd
-    let bitCoinA = data2.data.market_data.current_price.usd
-    this.setState({
-      bitCoinPriceBefore: Math.round(bitCoinB),
-      bitCoinPriceAfter: Math.round(bitCoinA)
-    })
+      const CoinGeckoClient = new CoinGecko()
+      let data1 = await CoinGeckoClient.coins.fetchHistory('bitcoin', {
+        date: dateOne
+      })
+      let data2 = await CoinGeckoClient.coins.fetchHistory('bitcoin', {
+        date: dateTwo
+      })
+      let bitCoinB = data1.data.market_data.current_price.usd
+      let bitCoinA = data2.data.market_data.current_price.usd
+      this.setState({
+        bitCoinPriceBefore: Math.round(bitCoinB),
+        bitCoinPriceAfter: Math.round(bitCoinA)
+      })
+    } catch {
+      console.error(error)
+    }
   }
   render() {
     if (
