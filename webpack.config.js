@@ -13,6 +13,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+  node: {
+    fs: 'empty'
+  },
   devtool: 'source-map',
   watchOptions: {
     ignored: /node_modules/
@@ -23,6 +26,10 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   }

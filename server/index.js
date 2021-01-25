@@ -10,6 +10,7 @@ const sessionStore = new SequelizeStore({db})
 const PORT = process.env.PORT || 8080
 const app = express()
 const socketio = require('socket.io')
+const cors = require('cors')
 module.exports = app
 
 // This is a global Mocha hook, used for resource cleanup.
@@ -48,6 +49,9 @@ const createApp = () => {
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
 
+  //allow all cors requests
+  app.use(cors())
+
   // compression middleware
   app.use(compression())
 
@@ -64,7 +68,6 @@ const createApp = () => {
   app.use(passport.session())
 
   // auth and api routes
-  app.use('/auth', require('./auth'))
   app.use('/api', require('./api'))
 
   // static file-serving middleware

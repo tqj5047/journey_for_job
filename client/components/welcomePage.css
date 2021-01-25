@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+body {
+  background: yellow;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70%;
+}
+.why {
+  height: 230px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: yellow;
+  padding: 20px 120px 50px 0;
+  padding-top: 50px;
+  text-align: center;
+}
+.text {
+  display: block;
+  padding-top: 15px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  border-top: none;
+  color: black;
+  font-size: 1.6em;
+  font-style: italic;
+}
+.bolded {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  letter-spacing: 0.1em;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 8px 8px #ff1f8f, 20px 20px #000000;
+}

@@ -1,0 +1,15 @@
+.introHeader {
+  font-family: 'Montserrat', sans-serif;
+
+  display: block;
+  padding-top: 15px;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  border-top: none;
+  color: black;
+  font-size: 1.6em;
+}
+.introP {
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+}
