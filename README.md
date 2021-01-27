@@ -1,8 +1,8 @@
-checkout @: https://cover-letter-jenna.herokuapp.com/whyIneedAjob
+checkout @: https://cover-letter-jenna.herokuapp.com/whyIneedAjob <br>
 Last night, looking at my robinhood account and wallstreetbets, I realized how much money I missed by not going to stock market but invested in a bootcamp. So I decided to make a website about it and come back in time every year and tell you if I regret the decision to do so and why.<br>
 Update 1/26/21:<br>
 Added game stop <br>
-Need to fix responsive mode.
+Need to fix responsive mode.:<br>
 I don't really read wallstreetbets,I am just in it for the memes.<br><br>
 If we decide to find our better half as if the we are looking for employees nowadays, we should change our tinder file to be:<br>
 Entry-level boyfriend:<br>
