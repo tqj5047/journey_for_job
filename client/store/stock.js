@@ -4,36 +4,47 @@ import history from '../history'
 /**
  * ACTION TYPES
  */
-const GET_STOCKA = 'GET_STOCKA'
-const GET_STOCKB = 'GET_STOCKB'
+const GET_TSLAA = 'GET_TSLAA'
+const GET_TSLAB = 'GET_TSLAB'
+const GET_GMEA = 'GET_GMEA'
+const GET_GMEB = 'GET_GMEB'
 /**
  * INITIAL STATE
  */
-const defaultStock = {before: 0, after: 0}
+const defaultStock = {tslaA: 0, tslaB: 0, gmeA: 0, gmeB: 0}
 
 /**
  * ACTION CREATORS
  */
-const getStockB = stockPrice => ({type: GET_STOCKB, stockPrice})
-const getStockA = stockPrice => ({type: GET_STOCKA, stockPrice})
-
+const getTSLAB = stockPrice => ({type: GET_TSLAB, stockPrice})
+const getTSLAA = stockPrice => ({type: GET_TSLAA, stockPrice})
+const getGMEB = stockPrice => ({type: GET_GMEB, stockPrice})
+const getGMEA = stockPrice => ({type: GET_GMEA, stockPrice})
 /**
  * THUNK CREATORS
  */
 export const getStockPricesA = () => async dispatch => {
   try {
-    const res = await axios.get('/api/yahoostockprices/after')
-    console.log('in stock in store what is res B', res.data)
-    dispatch(getStockA(res.data))
+    let res1 = await axios.get('/api/yahoostockprices/after/TSLA')
+    dispatch(getTSLAA(res1.data))
+
+    let res2 = await axios.get('/api/yahoostockprices/after/GME')
+    dispatch(getGMEA(res2.data))
   } catch (err) {
     console.error(err)
   }
 }
 export const getStockPricesB = date => async dispatch => {
   try {
-    const res = await axios.post('/api/yahoostockprices/before', {date: date})
-    console.log('in stock in store what is res A', res.data[0].close)
-    dispatch(getStockB(res.data[0].close))
+    let res1 = await axios.post('/api/yahoostockprices/before/TSLA', {
+      date: date
+    })
+    dispatch(getTSLAB(res1.data[0].close))
+
+    let res2 = await axios.post('/api/yahoostockprices/before/GME', {
+      date: date
+    })
+    dispatch(getGMEB(res2.data[0].close))
   } catch (err) {
     console.error(err)
   }
@@ -43,10 +54,14 @@ export const getStockPricesB = date => async dispatch => {
  */
 export default function(state = defaultStock, action) {
   switch (action.type) {
-    case GET_STOCKA:
-      return {...state, after: action.stockPrice}
-    case GET_STOCKB:
-      return {...state, before: action.stockPrice}
+    case GET_TSLAA:
+      return {...state, tslaA: action.stockPrice}
+    case GET_TSLAB:
+      return {...state, tslaB: action.stockPrice}
+    case GET_GMEA:
+      return {...state, gmeA: action.stockPrice}
+    case GET_GMEB:
+      return {...state, gmeB: action.stockPrice}
     default:
       return state
   }

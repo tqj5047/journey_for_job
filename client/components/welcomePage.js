@@ -93,13 +93,15 @@ class welcomePageDC extends React.Component {
         </p>
         <p className="text">
           Tesla was{' '}
-          <strong className="bolded">
-            ${Math.round(this.props.stockBefore)}
-          </strong>{' '}
+          <strong className="bolded">${Math.round(this.props.tslaB)}</strong>{' '}
           when I graduated, now it is{' '}
-          <strong className="bolded">
-            ${Math.round(this.props.stockAfter)}
-          </strong>.
+          <strong className="bolded">${Math.round(this.props.tslaA)}</strong>.
+        </p>
+        <p className="text">
+          Game Stop was{' '}
+          <strong className="bolded">${Math.round(this.props.gmeB)}</strong>{' '}
+          when I graduated, now it is{' '}
+          <strong className="bolded">${Math.round(this.props.gmeA)}</strong>.
         </p>
         <p className="text">
           I had <strong className="bolded">$0</strong> in balance, now I have{' '}
@@ -123,8 +125,10 @@ class welcomePageDC extends React.Component {
 
 const mapState = state => {
   return {
-    stockBefore: state.stock.before,
-    stockAfter: state.stock.after,
+    tslaB: state.stock.tslaB,
+    tslaA: state.stock.tslaA,
+    gmeA: state.stock.gmeA,
+    gmeB: state.stock.gmeB,
     difference: state.time.difference
   }
 }
