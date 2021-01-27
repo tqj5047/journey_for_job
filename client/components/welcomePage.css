@@ -7,10 +7,10 @@ body {
 .why {
   height: 230px;
   font-family: 'Montserrat', sans-serif;
-  background-color: yellow;
   padding: 20px 120px 50px 0;
   padding-top: 50px;
   text-align: center;
+  font-size: 6vw;
 }
 .text {
   display: block;
@@ -19,17 +19,20 @@ body {
   padding-bottom: 30px;
   border-top: none;
   color: black;
-  font-size: 1.6em;
+  font-size: 2vw;
   font-style: italic;
 }
 .bolded {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 80px;
+  font-size: 4vw;
   letter-spacing: 0.1em;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
+  /* -webkit-text-stroke-width: 3px; */
+  /* -webkit-text-stroke-color: white; */
   text-shadow: 8px 8px #ff1f8f, 20px 20px #000000;
+}
+.welcomePageDiv {
+  background-color: yellow;
 }
