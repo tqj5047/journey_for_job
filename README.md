@@ -1,8 +1,8 @@
 Last night, looking at my robinhood account and wallstreetbets, I realized how much money I missed by not going to stock market but invested in a bootcamp. So I decided to make a website about it and come back in time every year and tell you if I regret the decision to do so and why.<br>
 Update 1/26/21:<br>
 I should probably add game stop to the page ;)<br>
-I don't really read wallstreetbets,I am just in it for the memes.<br>
-If we decide to find our better half as if the we are looking for employees nowadays, we would post:<br>
+I don't really read wallstreetbets,I am just in it for the memes.<br><br>
+If we decide to find our better half as if the we are looking for employees nowadays, we should change our tinder file to be:<br>
 Entry-level boyfriend:<br>
 
 * location: Near me<br>
